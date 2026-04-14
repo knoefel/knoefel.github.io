@@ -1,0 +1,70 @@
+:root {
+  color-scheme: light dark;
+
+  /* palette — warm cream + rich black + ONE deep-teal accent (NOT blue, NOT terracotta) */
+  --color-bg:        #FAF9F6;  /* warm cream paper */
+  --color-text:      #1A1A1A;  /* rich near-black */
+  --color-muted:     #6B6B6B;  /* slate grey */
+  --color-subtle:    #9CA3AF;  /* lighter grey for hairlines */
+  --color-rule:      #E5E2D8;  /* warm rule, paper-toned */
+  --color-accent:    #1E5A6E;  /* deep teal — distinctive, not done-to-death */
+  --color-accent-soft: #E8EFF1; /* pale teal for current-role tint */
+
+  /* type families — three distinct voices */
+  --font-display: 'Bricolage Grotesque Variable', 'Bricolage Grotesque', Georgia, sans-serif;
+  --font-body:    'Hanken Grotesk Variable', 'Hanken Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono:    'Geist Mono Variable', 'Geist Mono', 'SF Mono', Menlo, monospace;
+
+  /* type scale — denser, no display-hero size needed */
+  --text-xs:    11px;
+  --text-sm:    13px;
+  --text-base:  15px;
+  --text-md:    17px;
+  --text-lg:    20px;
+  --text-xl:    24px;
+  --text-2xl:   32px;
+
+  /* spacing (tighter rhythm) */
+  --space-1:  4px;
+  --space-2:  8px;
+  --space-3:  12px;
+  --space-4:  16px;
+  --space-5:  24px;
+  --space-6:  32px;
+  --space-7:  48px;
+  --space-8:  64px;
+  --space-9:  96px;
+
+  /* layout */
+  --content-max: 800px;
+  --page-padding: clamp(20px, 4vw, 40px);
+
+  /* timeline geometry — the line + dot x-position auto-calculates from year col + gap,
+     so the spine stays centered in the column gap at every breakpoint. */
+  --year-col-width: 80px;
+  --timeline-column-gap: 24px;   /* matches --space-5 desktop */
+  --timeline-line-x: calc(var(--year-col-width) + var(--timeline-column-gap) / 2);
+  --timeline-dot-size: 10px;
+}
+
+/* Dark mode — follows system preference. Warm off-black background, warm
+   off-white text, lighter teal accent that reads clearly on dark. */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-bg:          #141312;  /* warm off-black, not pure #000 */
+    --color-text:        #EBE7DE;  /* warm off-white */
+    --color-muted:       #9A968E;  /* medium warm grey */
+    --color-subtle:      #5A5852;  /* hairline grey, darker side */
+    --color-rule:        #2A2825;  /* dark warm rule */
+    --color-accent:      #6BB8CB;  /* lighter teal — contrast 7:1 on bg */
+    --color-accent-soft: #1F3840;  /* dark teal tint for current-role halo */
+  }
+}
+
+/* Narrower year column + gap on tablet / large phone. --timeline-line-x recomputes automatically. */
+@media (max-width: 640px) {
+  :root {
+    --year-col-width: 60px;
+    --timeline-column-gap: 12px;
+  }
+}
