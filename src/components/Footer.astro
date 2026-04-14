@@ -1,0 +1,28 @@
+---
+const year = new Date().getFullYear();
+---
+<footer class="footer">
+  <span>© {year} Andreas Knöfel</span>
+  <span class="sep" aria-hidden="true">·</span>
+  <a href="https://github.com/knoefel">GitHub</a>
+</footer>
+
+<style>
+  .footer {
+    margin-top: var(--space-9);
+    padding-top: var(--space-5);
+    border-top: 1px solid var(--color-rule);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--space-2);
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    color: var(--color-muted);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+  .footer a { color: inherit; }
+  .footer a:hover { color: var(--color-accent); }
+  .sep { color: var(--color-subtle); }
+</style>

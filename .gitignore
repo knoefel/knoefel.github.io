@@ -1,0 +1,25 @@
+# Astro
+dist/
+.astro/
+
+# deps
+node_modules/
+
+# env
+.env
+.env.local
+.env.*.local
+
+# macOS
+.DS_Store
+
+# editors
+.vscode/
+.idea/
+
+# tests
+tests/print/*.pdf
+test-results/
+playwright-report/
+blob-report/
+playwright/.cache/

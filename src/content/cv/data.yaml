@@ -1,0 +1,344 @@
+profile:
+  firstName: Andreas
+  lastName: Knöfel
+  role: Lead Frontend & Product Engineer
+  location: Leipzig
+  birth:
+    date: "1985-08-11"
+    place: Halle (Saale)
+  positioning: >
+    Lead Frontend & Product Engineer aus Leipzig. Über zehn Jahre
+    Erfahrung zwischen Bundes-Portalen, Industrie-Leitwarten und
+    E-Commerce. Schwerpunkt auf sauberer Architektur, Design Systems
+    und einer Developer Experience, die Teams nachhaltig produktiv
+    hält.
+
+experience:
+  - company: DSR Digital Solutions GmbH
+    location: Remote (Hamburg)
+    from: 2022-09
+    to: null
+    title: Lead Frontend & Product Engineer
+    current: true
+    summary: >
+      E-Commerce-Plattform für nachhaltigen Tourismus mit Storefront,
+      Anbieter-Anbindung und internen Tools für das Operations-Team.
+    responsibilities:
+      - Technische Leitung und Architektur der gesamten Frontend-Landschaft – Storefront, Checkout, vier interne Ops-Tools und eine Integrations-App für Anbieter:innen
+      - Eigenverantwortliche Fullstack-Entwicklung neuer Features über Frontend und Backend
+      - Einführung eines Design Systems mit Tailwind und Storybook als gemeinsame Basis aller Apps
+      - 'Enabler für das Team – alles, was Entwickler:innen im Alltag brauchen: Test-Infrastruktur (Playwright + MSW), internes Tooling und Packages sowie ein KI-gestützter Workflow mit Codex und Claude Code'
+      - Einrichtung der Deployment-Infrastruktur mit Pulumi
+      - Abstimmung mit Product Owner und Head of Software Development in Sprint-Planung, Refinement und Architektur
+      - Mentoring und Pair Programming mit Junior-Entwickler:innen
+    stack:
+      - TypeScript
+      - React
+      - Next.js
+      - React Router 7
+      - Tailwind
+      - shadcn/ui
+      - React Aria
+      - TanStack Query
+      - TanStack Table
+      - React Hook Form
+      - Paraglide.js
+      - next-intl
+      - Playwright
+      - MSW
+      - NestJS
+      - GraphQL
+      - REST
+      - Jest
+      - CI/CD
+      - NX (Nrwl)
+      - Docker
+      - Pulumi
+      - GitHub Actions
+      - Codex
+      - Claude Code
+
+  - company: ti&m AG
+    location: Zürich
+    from: 2020-08
+    to: 2022-04
+    title: Lead Frontend Engineer
+    summary: >
+      Leitung der Frontend-Entwicklung in einem Software-Haus, parallel
+      in zwei Produktteams. Projekte für Bauwesen, Finanzwirtschaft
+      und öffentliche Verwaltung.
+    responsibilities:
+      - Technische Leitung einer React-Anwendung zur Verwaltung der Bau-Normen in der Schweiz
+      - Architektur und Aufbau eines internen Mitarbeiter-Management-Tools mit React, NestJS und GraphQL
+      - Evaluierung neuer Technologien wie NX-Monorepo und Svelte in Proof-of-Concepts
+      - Technische Interviews für Frontend- und TypeScript-Stellen
+      - Mentoring und Architektur-Sparring mit Junior-Entwickler:innen
+    stack:
+      - TypeScript
+      - React
+      - Angular
+      - Svelte
+      - React Query
+      - React Hook Form
+      - Playwright
+      - Cypress
+      - Ramda
+      - NestJS
+      - GraphQL
+      - REST
+      - Jest
+      - CI/CD
+      - NX (Nrwl)
+      - Docker
+      - Material UI
+      - GitLab
+
+  - company: Rapid Venture Accounting GmbH
+    location: Erfurt
+    from: 2020-04
+    to: 2020-08
+    title: Full-Stack Developer
+    summary: >
+      Portfolio-Tool als Progressive Web App für Venture-Capital- und
+      Private-Equity-Gesellschaften. Dateneingabe, Reporting und
+      mobile Nutzung.
+    responsibilities:
+      - Fullstack-Entwicklung in einem kleinen Team
+      - Cross-Platform-Support für iOS und Android über eine PWA
+      - GraphQL-Backend mit NestJS vor einem bestehenden REST-Endpunkt
+      - Visualisierung der Finanzbuchhaltungsdaten mit HighCharts
+      - Mehrsprachigkeit mit Transloco
+      - Aufbau der Deployment-Pipeline und der Entwicklungsumgebung
+    stack:
+      - TypeScript
+      - Angular 9
+      - RxJS
+      - NgRx
+      - Apollo GraphQL
+      - PrimeNG
+      - Transloco
+      - HighCharts
+      - Ramda
+      - SCSS
+      - Jasmine/Karma
+      - NestJS
+      - GraphQL
+      - REST
+      - Jest
+      - CI/CD
+      - Docker
+      - GitLab
+
+  - company: e2m – Energy2Market GmbH
+    location: Leipzig
+    from: 2018-10
+    to: 2020-03
+    title: Full-Stack Developer
+    summary: >
+      Web-Applikationen für die Analyse und Steuerung dezentraler
+      Energieanlagen (Windparks, Solarparks, Biogasanlagen und
+      Industrielasten) im kurzfristigen Stromhandel.
+    responsibilities:
+      - Architektur der Frontend-Schicht mehrerer Applikationen mit Angular 8+, NgRx und RxJS
+      - UI-Komponenten für die Live-Visualisierung von Messdaten
+      - Operator-Oberflächen für die Steuerung dezentraler Anlagen, teilweise in 24/7-Leitwarten
+      - TypeScript-Microservices mit NestJS zur Verarbeitung der Stammdaten aus verteilten Messstellen
+      - Aufbau der Build- und Deployment-Pipeline mit Rancher und Bamboo
+      - Code-Reviews und Coaching im Frontend-Team
+    stack:
+      - TypeScript
+      - Angular 8+
+      - RxJS
+      - NgRx
+      - Apollo GraphQL
+      - Angular Material
+      - HighCharts
+      - SCSS
+      - Jasmine/Karma
+      - NestJS
+      - GraphQL
+      - REST
+      - PostgreSQL
+      - MongoDB
+      - Swagger
+      - Jest
+      - CI/CD
+      - Docker
+      - Rancher
+      - Bamboo
+
+  - company: mgm technology partners GmbH
+    location: Leipzig
+    from: 2015-02
+    to: 2018-08
+    title: Frontend Developer
+    summary: >
+      Frontend-Entwicklung für E-Government- und E-Commerce-Anwendungen.
+      Unter anderem Relaunch eines Bundesportals und mobile Tools für
+      Filialleiter:innen eines globalen Discounters.
+    projects:
+      - Relaunch des Webportals des Bundesamtes für Finanzen, barrierefrei nach BITV 2.0 (2016–2018)
+      - Hybrid-App (Cordova) als Informations- und Schulungsplattform für Filialleiter:innen eines globalen Discounters (2015)
+    responsibilities:
+      - Frontend-Entwicklung ohne SPA-Framework für langlebige Bundesportale
+      - Cross-Browser-Support inklusive älterer IE-Versionen
+      - Pflege eines Living Styleguides zwischen Entwicklung und UI/UX
+      - Responsive Klick-Prototypen für Usability-Tests, in Abstimmung mit der Design-Abteilung
+    stack:
+      - ES6
+      - TypeScript
+      - Babel
+      - Node.js
+      - HTML5
+      - CSS3
+      - Stylus
+      - SCSS
+      - Gulp
+      - Grunt
+      - Browserify
+      - Tape
+      - Sinon
+      - Cordova
+
+  - company: Konsultaner GmbH & Co. KG
+    location: Dresden
+    from: 2012-07
+    to: 2014-12
+    title: Full-Stack Developer
+    summary: >
+      Fullstack-Entwicklung in einem kleinen Team, von der
+      Anforderungsanalyse bis zum Rollout. Projekte in Logistik
+      und Entertainment.
+    projects:
+      - Software zur automatischen Auftragsdisposition für ein Logistikunternehmen, mit Routenplanung und Flotten-Zuweisung (2012–2014)
+    responsibilities:
+      - Anforderungsaufnahme direkt bei den Kund:innen
+      - Konzeption und Umsetzung der Systemarchitektur, Frontend wie Backend
+      - Rollout und Betrieb beim Kunden
+    stack:
+      - JavaScript
+      - AngularJS
+      - SCSS
+      - Bootstrap
+      - jQuery
+      - Firebase
+      - Ruby
+      - Ruby on Rails
+      - MySQL
+      - REST
+
+education:
+  - institution: Berufsakademie Sachsen, Staatliche Studienakademie
+    location: Dresden
+    from: 2011-10
+    to: 2014-09
+    degree: Medieninformatik (Bachelor of Science)
+    grade: "1,8"
+    thesis: >
+      Vergleich der Performance unterschiedlicher Implementierungen der
+      SHA256-Funktion unter Verwendung der HTML5 Web-Workers-API und WebGL
+
+  - institution: Fachhochschule Merseburg
+    location: Merseburg
+    from: 2008-10
+    to: 2011-09
+    degree: Kultur- und Medienpädagogik (Bachelor of Arts)
+    grade: "1,5"
+    thesis: >
+      Communities on Air – Das Zusammenspiel von Rundfunk und Social Media
+      am Beispiel der Sendung meinFigaro
+
+skills:
+  programmiersprachen:
+    - JavaScript (ES6+)
+    - TypeScript
+    - Ruby
+    - Java
+  frontend:
+    - React
+    - Angular 2+
+    - Svelte
+    - Next.js
+    - React Router 7
+    - Playwright
+    - RxJS
+    - Apollo GraphQL
+    - Tailwind
+    - shadcn/ui
+    - React Aria
+    - TanStack Query
+    - TanStack Table
+    - Paraglide.js
+    - next-intl
+    - Redux
+    - NgRx
+    - Redux Saga
+    - HTML5
+    - CSS3
+    - SCSS
+    - Stylus
+    - Pug
+    - Gulp
+    - Grunt
+    - Babel
+    - Angular Material
+    - PrimeNG
+    - Nebular
+    - LoDash FP
+    - Ramda
+    - Transloco
+    - Bootstrap
+    - HighCharts
+    - Jasmine/Karma
+    - Jest
+    - MSW
+    - Ionic
+    - Cordova
+    - Office Add-ins
+  backend:
+    - Node.js
+    - NestJS
+    - Express
+    - GraphQL
+    - REST
+    - TypeORM
+    - Ruby on Rails
+    - MongoDB
+    - PostgreSQL
+    - MySQL
+    - Firebase
+    - Swagger
+  devops:
+    - Pulumi
+    - GitHub Actions
+    - GitLab
+    - Docker
+    - Rancher
+    - Bamboo
+    - Artifactory
+  tools:
+    - Git
+    - SVN
+    - Bitbucket
+    - Linux
+    - macOS
+    - Windows
+    - VS Code
+    - WebStorm
+    - Figma
+    - Codex
+    - Claude Code
+  vorgehensweisen:
+    - SCRUM
+    - Reactive Programming
+    - Functional Programming
+    - OOP
+    - JIRA
+    - Confluence
+
+languages:
+  - { name: Deutsch,  level: Muttersprache }
+  - { name: Englisch, level: Gut }
+
+personal:
+  - Musikkomposition / Musikproduktion

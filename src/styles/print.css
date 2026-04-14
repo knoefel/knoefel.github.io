@@ -1,0 +1,369 @@
+@media print {
+  /* ─── Page ──────────────────────────────────────────────────────────── */
+  @page {
+    size: A4;
+    margin: 18mm 18mm 20mm;
+
+    /* Explicitly blank out every margin box we don't use. This prevents the
+       browser's default print headers (date, URL, document title) from
+       rendering in the top-left / top-right in Chromium — the user-agent
+       only falls back to those defaults when no @top-* / @bottom-* rule
+       is set for that slot. */
+    @top-left    { content: ""; }
+    @top-center  { content: ""; }
+    @top-right   { content: ""; }
+    @bottom-left { content: ""; }
+    @bottom-right { content: ""; }
+
+    @bottom-center {
+      content: "Andreas Knöfel · knoefel.github.io · Seite " counter(page) " / " counter(pages);
+      font-family: 'Hanken Grotesk Variable', sans-serif;
+      font-size: 8pt;
+      color: #666;
+    }
+  }
+
+  /* ─── Force light palette for print regardless of the current color scheme ── */
+  :root {
+    --color-bg: #FFFFFF !important;
+    --color-text: #000000 !important;
+    --color-muted: #444444 !important;
+    --color-subtle: #777777 !important;
+    --color-rule: #CCCCCC !important;
+    --color-accent: #1E5A6E !important;
+    --color-accent-soft: transparent !important;
+    --page-padding: 0 !important;
+  }
+
+  body {
+    background: #FFFFFF !important;
+    color: #000000 !important;
+    font-family: 'Hanken Grotesk Variable', 'Hanken Grotesk', sans-serif !important;
+    font-size: 10pt !important;
+    line-height: 1.45 !important;
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+
+  /* Kill animations and any on-page motion */
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .page {
+    max-width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  .skip-link { display: none !important; }
+
+  /* ─── Transform the TopBar into a proper print header ───────────────── */
+  .topbar {
+    border-bottom: 0.75pt solid #000 !important;
+    padding-bottom: 5mm !important;
+    margin-bottom: 8mm !important;
+  }
+  .topbar-row {
+    display: block !important;
+    font-family: 'Bricolage Grotesque Variable', 'Bricolage Grotesque', sans-serif !important;
+    font-size: 24pt !important;
+    color: #000 !important;
+    text-transform: none !important;
+    letter-spacing: -0.02em !important;
+    line-height: 1.1 !important;
+  }
+  .topbar-name {
+    font-family: 'Bricolage Grotesque Variable', 'Bricolage Grotesque', sans-serif !important;
+    font-size: 24pt !important;
+    font-weight: 600 !important;
+    color: #000 !important;
+  }
+  .topbar-sep,
+  .topbar-label,
+  .topbar-year,
+  .topbar-spacer { display: none !important; }
+  .topbar::after {
+    content: "Lead Frontend & Product Engineer · Leipzig";
+    display: block;
+    font-family: 'Hanken Grotesk Variable', sans-serif;
+    font-size: 10.5pt;
+    color: #333;
+    margin-top: 3mm;
+    font-weight: 400;
+    letter-spacing: 0;
+    text-transform: none;
+  }
+
+  /* ─── Section headings — reveal the sr-only label too ───────────────── */
+  .sr-only {
+    position: static !important;
+    width: auto !important;
+    height: auto !important;
+    padding: 0 !important;
+    margin: 0 0 5mm 0 !important;
+    overflow: visible !important;
+    clip: auto !important;
+    white-space: normal !important;
+    font-family: 'Bricolage Grotesque Variable', sans-serif !important;
+    font-size: 13pt !important;
+    font-weight: 500 !important;
+    color: #000 !important;
+    letter-spacing: -0.015em !important;
+  }
+
+  section[id] {
+    margin-top: 8mm !important;
+    /* Don't use break-inside: avoid here — it forces the whole Stationen
+       section onto a single page and leaves page 1 mostly empty.
+       Page-break control lives on individual .entry instead. */
+  }
+  section[id]:first-child,
+  .stations {
+    margin-top: 0 !important;
+  }
+
+  .section-label {
+    font-family: 'Bricolage Grotesque Variable', sans-serif !important;
+    font-size: 13pt !important;
+    font-weight: 500 !important;
+    color: #000 !important;
+    letter-spacing: -0.015em !important;
+    margin-bottom: 5mm !important;
+    padding-bottom: 2mm !important;
+    border-bottom: 0.5pt solid #888 !important;
+  }
+
+  /* ─── Timeline ──────────────────────────────────────────────────────── */
+  .timeline { position: static !important; }
+  .timeline::before { display: none !important; }
+  .entry-dot { display: none !important; }
+
+  .entry {
+    display: grid !important;
+    grid-template-columns: 25mm 1fr !important;
+    column-gap: 6mm !important;
+    padding-bottom: 0 !important;
+    margin-bottom: 6mm !important;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+  .entry:last-child { margin-bottom: 0 !important; }
+
+  .entry-year {
+    font-family: 'Geist Mono Variable', monospace !important;
+    font-size: 9pt !important;
+    color: #444 !important;
+    text-align: left !important;
+    padding-top: 0.5mm !important;
+    padding-right: 0 !important;
+    letter-spacing: 0.02em !important;
+  }
+
+  .entry-content { padding-left: 0 !important; }
+
+  .entry-company {
+    font-family: 'Bricolage Grotesque Variable', sans-serif !important;
+    font-size: 11.5pt !important;
+    font-weight: 500 !important;
+    color: #000 !important;
+    margin: 0 0 1mm 0 !important;
+    letter-spacing: -0.01em !important;
+  }
+
+  .entry-meta {
+    font-family: 'Geist Mono Variable', monospace !important;
+    font-size: 8.5pt !important;
+    color: #555 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.03em !important;
+    margin: 0 0 2mm 0 !important;
+  }
+
+  .entry-title {
+    font-family: 'Hanken Grotesk Variable', sans-serif !important;
+    font-size: 10pt !important;
+    font-weight: 500 !important;
+    font-style: italic !important;
+    color: #000 !important;
+    margin: 0 0 3mm 0 !important;
+  }
+
+  .entry-summary {
+    font-size: 10pt !important;
+    color: #000 !important;
+    margin: 0 0 3mm 0 !important;
+    max-width: 150mm !important;
+  }
+
+  .entry-list {
+    list-style: none !important;
+    padding: 0 !important;
+    margin: 0 0 3mm 0 !important;
+    max-width: 150mm !important;
+  }
+  .entry-list li {
+    display: block !important;
+    font-size: 10pt !important;
+    line-height: 1.45 !important;
+    padding: 0 0 0 5mm !important;
+    margin: 0 0 0.8mm 0 !important;
+    position: relative !important;
+  }
+  .entry-list .bullet { display: none !important; }
+  .entry-list li::before {
+    content: "•";
+    position: absolute;
+    left: 1mm;
+    color: #666;
+  }
+
+  /* Stack: render as inline mono text with dot separators (no pills) */
+  .entry-stack {
+    display: block !important;
+    margin-top: 2mm !important;
+    font-family: 'Geist Mono Variable', monospace !important;
+    font-size: 8pt !important;
+    color: #555 !important;
+    line-height: 1.55 !important;
+  }
+  .entry-stack .badge {
+    display: inline !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    color: #555 !important;
+    padding: 0 !important;
+    font-family: inherit !important;
+    font-size: inherit !important;
+    font-weight: 400 !important;
+    letter-spacing: inherit !important;
+    border-radius: 0 !important;
+    /* Allow the tag line to wrap between badges — otherwise long stacks
+       overflow the page and clip mid-word. */
+    white-space: normal !important;
+  }
+  .entry-stack .badge::after { content: " · "; color: #AAA; }
+  .entry-stack .badge:last-child::after { content: ""; }
+
+  /* ─── Education ─────────────────────────────────────────────────────── */
+  .entry-grade-line { margin-bottom: 3mm !important; }
+  .entry-grade-line .badge {
+    display: inline !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    font-family: 'Hanken Grotesk Variable', sans-serif !important;
+    font-size: 10pt !important;
+    color: #000 !important;
+    padding: 0 !important;
+    font-weight: 500 !important;
+  }
+  .entry-thesis {
+    border-left: 1.5pt solid #888 !important;
+    padding-left: 4mm !important;
+    font-family: 'Hanken Grotesk Variable', sans-serif !important;
+    font-size: 10pt !important;
+    font-style: italic !important;
+    color: #000 !important;
+    max-width: 150mm !important;
+  }
+  .entry-thesis-label {
+    font-family: 'Geist Mono Variable', monospace !important;
+    font-size: 8pt !important;
+    color: #555 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.04em !important;
+    font-style: normal !important;
+    margin-bottom: 1mm !important;
+    display: block !important;
+  }
+
+  /* ─── Skills: label + dot-separated tag string, no colored pills ────── */
+  .skill-grid { display: block !important; }
+  .skill-row {
+    display: grid !important;
+    grid-template-columns: 38mm 1fr !important;
+    column-gap: 5mm !important;
+    padding-top: 2mm !important;
+    margin-bottom: 0 !important;
+    border-top: 0.25pt solid #BBB !important;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+  .skill-row:first-child {
+    border-top: 0 !important;
+    padding-top: 0 !important;
+  }
+  .skill-row-label {
+    font-family: 'Geist Mono Variable', monospace !important;
+    font-size: 8pt !important;
+    font-weight: 500 !important;
+    color: #444 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.05em !important;
+    padding-top: 0.5mm !important;
+  }
+  .skill-row-tags {
+    display: block !important;
+    font-family: 'Hanken Grotesk Variable', sans-serif !important;
+    font-size: 9.5pt !important;
+    color: #000 !important;
+    line-height: 1.55 !important;
+    gap: 0 !important;
+  }
+  .skill-row-tags .badge {
+    display: inline !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    color: #000 !important;
+    font-family: 'Hanken Grotesk Variable', sans-serif !important;
+    font-size: inherit !important;
+    font-weight: 400 !important;
+    padding: 0 !important;
+    border-radius: 0 !important;
+    white-space: normal !important;
+  }
+  .skill-row-tags .badge::after { content: " · "; color: #BBB; }
+  .skill-row-tags .badge:last-child::after { content: ""; }
+
+  /* ─── Footer: hide (we have @page footer) ───────────────────────────── */
+  .footer { display: none !important; }
+
+  /* ─── Link handling ─────────────────────────────────────────────────── */
+  a { color: #000 !important; text-decoration: none !important; }
+  a::after {
+    content: " (" attr(href) ")";
+    font-family: 'Geist Mono Variable', monospace;
+    font-size: 7.5pt;
+    color: #777;
+  }
+  a[href^="#"]::after,
+  a[href^="mailto:"]::after,
+  a[href^="tel:"]::after { content: "" !important; }
+
+  /* ─── Break control on headings ─────────────────────────────────────── */
+  h1, h2, h3, h4, h5, h6 {
+    break-after: avoid;
+    page-break-after: avoid;
+  }
+
+  /* ─── Page layout: Stationen heading hidden, Studium + Skills on own page ── */
+
+  /* "Stationen" sr-only heading not needed in print — the roles speak for themselves */
+  .stations > .sr-only { display: none !important; }
+
+  /* Force Studium onto a new page so it doesn't awkwardly trail after the
+     last Stationen entry. Skills follows directly after Studium (no extra break). */
+  section#studium {
+    break-before: page !important;
+    page-break-before: always !important;
+  }
+  section#skills {
+    break-before: auto !important;
+    page-break-before: auto !important;
+  }
+}
