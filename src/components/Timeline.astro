@@ -1,0 +1,42 @@
+---
+import TimelineEntry from './TimelineEntry.astro';
+
+interface Role {
+  company: string; location: string;
+  from: string; to: string | null;
+  title: string; current?: boolean;
+  summary: string; projects?: string[];
+  responsibilities: string[]; stack: string[];
+}
+
+interface Props { entries: Role[]; }
+const { entries } = Astro.props;
+---
+<ol class="timeline">
+  {entries.map((role) => (
+    <TimelineEntry role={role} />
+  ))}
+</ol>
+
+<style>
+  .timeline {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    position: relative;
+  }
+  /* The vertical line runs from the first dot to the last dot through all entries */
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: var(--timeline-line-x);
+    top: 6px;       /* aligns with first dot center */
+    bottom: 6px;    /* stops at last dot center */
+    width: 1px;
+    background: var(--color-rule);
+  }
+  /* Phone: drop the line along with the dots and year column (see TimelineEntry.astro) */
+  @media (max-width: 480px) {
+    .timeline::before { display: none; }
+  }
+</style>

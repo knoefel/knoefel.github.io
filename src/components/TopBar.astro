@@ -1,0 +1,33 @@
+---
+const year = new Date().getFullYear();
+---
+<header class="topbar">
+  <div class="topbar-row">
+    <span class="topbar-name">Andreas Knöfel</span>
+    <span class="topbar-sep" aria-hidden="true">·</span>
+    <span class="topbar-label">CV</span>
+    <span class="topbar-spacer"></span>
+    <time class="topbar-year">{year}</time>
+  </div>
+</header>
+
+<style>
+  .topbar {
+    border-bottom: 1px solid var(--color-rule);
+    padding-bottom: var(--space-3);
+    margin-bottom: var(--space-7);
+  }
+  .topbar-row {
+    display: flex;
+    align-items: baseline;
+    gap: var(--space-2);
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    color: var(--color-muted);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  .topbar-name { color: var(--color-text); font-weight: 500; }
+  .topbar-spacer { flex: 1; }
+  .topbar-year { font-variant-numeric: tabular-nums; }
+</style>
